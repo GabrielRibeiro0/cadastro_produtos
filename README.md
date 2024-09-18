@@ -30,18 +30,17 @@ Este é um projeto para uma API de cadastro de produtos usando Node.js e Express
 4. **Configure o banco de dados:**
 
     Crie um banco de dados PostgreSQL com o nome `produtosdb` e configure as credenciais no arquivo `src/database/database.js`.
+   
+    Crie um arquivo .env na raiz do projeto e adicione as seguintes variáveis de ambiente:
+    
+        DB_USER='seu_usuario',      // Altere para seu usuário do PostgreSQL
+        DB_HOST='localhost',    // Altere se seu banco de dados estiver em outro host
+        DB_NAME='nome_do_banco', // Nome do banco de dados
+        DB_PASSWORD'sua_senha',     // Altere para sua senha do PostgreSQL
+        DB_PORT=5432,           // Porta padrão do PostgreSQL
 
-    ```javascript
-    const pool = new Pool({
-        user: 'seu_usuario',      // Altere para seu usuário do PostgreSQL
-        host: 'localhost',    // Altere se seu banco de dados estiver em outro host
-        database: 'nome_do_banco', // Nome do banco de dados
-        password: 'sua_senha',     // Altere para sua senha do PostgreSQL
-        port: 5432,           // Porta padrão do PostgreSQL
-    });
-    ```
 
-5. **Crie a tabela `products` no banco de dados:**
+6. **Crie a tabela `products` no banco de dados:**
 
     Utilize o seguinte comando SQL para criar a tabela:
 
@@ -55,10 +54,10 @@ Este é um projeto para uma API de cadastro de produtos usando Node.js e Express
     );
     ```
 
-6. **Inicie o servidor:**
+7. **Inicie o servidor:**
 
     ```bash
-    npm start
+    node index.js
     ```
 
     O servidor estará disponível em `http://localhost:3000`.
